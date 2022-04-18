@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ED4242"
+    tools:context=".DisplayDonorsActivity">
+
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:id="@+id/relativeDonor"
+        android:gravity="center"
+        android:foregroundGravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
+
+        <TextView
+            android:id="@+id/distHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_toStartOf="@id/more"
+            android:fontFamily="@font/baskervville"
+            android:text="Displayed Donors from ALL districts.\nTo change DISTRICT edit below."
+            android:textAlignment="center"
+            android:textSize="12sp" />
+
+
+
+
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/dist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/distHelp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/square_border"
+                android:fontFamily="@font/baskervville"
+                android:padding="10dp"
+                android:text="District"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/districtFilter"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_border"
+                android:fontFamily="@font/baskervville"
+                android:imeActionLabel=""
+                android:imeOptions="actionDone"
+                android:inputType="textCapCharacters"
+                android:padding="10dp"
+                android:text="ALL"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dist"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toStartOf="@+id/more"
+            android:clickable="true"
+            android:contextClickable="true"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/baskervville"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="Make CALL or SHARE if Needed."
+            android:textAlignment="center" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/more"
+            android:layout_marginEnd="5dp"
+            android:tooltipText="More"
+            android:onClick="popUp"
+            android:src="@drawable/ic_baseline_more_vert_24"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/donorsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/relative1"
+        android:layout_below="@id/relativeDonor" />
+
+    <RelativeLayout
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/relative1">
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="View Requests"
+            android:textAllCaps="false"
+            android:onClick="viewRequestList"
+            android:id="@+id/btnViewDonors"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
